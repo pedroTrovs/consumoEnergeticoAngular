@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-check',
@@ -7,5 +7,12 @@ import { Component, Input, Output } from '@angular/core';
 })
 export class CheckComponent {
   @Input() holder!: string;
-  @Output() select!: boolean;
+  select: boolean = false;
+
+  @Output() sendValue = new EventEmitter();
+
+  onChecked() {
+    this.select = !this.select;
+    this.sendValue.emit(this.select);
+  }
 }
