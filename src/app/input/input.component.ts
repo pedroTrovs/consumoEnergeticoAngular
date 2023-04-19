@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class InputComponent {
   @Input() holder!: string;
   @Output() send = new EventEmitter();
-  value: number=0;
+  value! : number;
 
   onChange()
   {

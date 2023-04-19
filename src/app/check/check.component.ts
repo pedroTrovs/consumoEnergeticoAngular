@@ -9,10 +9,10 @@ export class CheckComponent {
   @Input() holder!: string;
   select: boolean = false;
 
-  @Output() sendValue = new EventEmitter();
+  @Output() send = new EventEmitter();
 
   onChecked() {
     this.select = !this.select;
-    this.sendValue.emit(this.select);
+    this.send.emit(this.select);
   }
 }

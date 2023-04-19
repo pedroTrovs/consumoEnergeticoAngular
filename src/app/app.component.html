@@ -3,14 +3,14 @@
   <div class="d-flex justify-content-center">
     <div class="d-flex flex-column mb-3">
       <h1>Cálculo de consumo energético</h1>
-      <app-input [holder]="'Número de pessoas'"></app-input>
-      <app-input [holder]="'Número de cômodos'"></app-input>
-      <app-check [holder]="'Tenho máquina de lavar roupas'"></app-check>
-      <app-check [holder]="'Tenho máquina de secar roupas'"></app-check>
-      <app-input [holder]="'Quantidade de TVs'"></app-input>
-      <app-input [holder]="'Quantidade de computadores'"></app-input>
-      <app-input [holder]="'Tarifa energética'"></app-input>
-      <app-button></app-button>
+      <app-input [holder]="'Número de pessoas'" (send)="sendQtdPessoas($event)"></app-input>
+      <app-input [holder]="'Número de cômodos'" (send)="sendQtdRooms($event)"></app-input>
+      <app-check [holder]="'Tenho máquina de lavar roupas'" (send)="verifyWashing($event)"></app-check>
+      <app-check [holder]="'Tenho máquina de secar roupas'" (send)="verifyDrying($event)"></app-check>
+      <app-input [holder]="'Quantidade de TVs'" (send)="sendQtdTV($event)"></app-input>
+      <app-input [holder]="'Quantidade de computadores'" (send)="sendQtdComp($event)"></app-input>
+      <app-input [holder]="'Tarifa energética'" (send)="sendTax($event)"></app-input>
+      <app-button [holder]="'Calcular'" (click)="execute()"></app-button>
     </div>
   </div>
 </div>
